@@ -1,4 +1,26 @@
 return {
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        variant = "default",
+        transparent = true,
+        italic_comments = true,
+      })
+    end,
+  },
+  {
+    "wtfox/jellybeans.nvim",
+    priority = 1000,
+    config = function()
+      require("jellybeans").setup({
+        transparent = true,
+        italics = true,
+      })
+    end,
+  },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
   -- lua/plugins/rose-pine.lua
@@ -90,7 +112,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "jellybeans",
     },
   },
 }
