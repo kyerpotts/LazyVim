@@ -1,25 +1,69 @@
 return {
   {
-    "scottmckendry/cyberdream.nvim",
+    "loctvl842/monokai-pro.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("cyberdream").setup({
-        variant = "default",
-        transparent = true,
-        italic_comments = true,
+      require("monokai-pro").setup({
+        transparent_background = true,
+        terminal_colors = false,
+        devicons = true,
+        styles = {
+          comment = { italic = true },
+          keyword = { italic = true },
+          type = { italic = true },
+          storageclass = { italic = true },
+          structure = { italic = true },
+          parameter = { italic = true },
+          annotation = { italic = true },
+          tag_attribute = { italic = true },
+        },
+        filter = "pro",
+        background_clear = {
+          "toggleterm",
+          "notify",
+          "nvim-tree",
+          "notify",
+        },
       })
     end,
   },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       variant = "default",
+  --       transparent = true,
+  --       italic_comments = true,
+  --     })
+  --   end,
+  -- },
   {
     "wtfox/jellybeans.nvim",
+    lazy = false,
     priority = 1000,
-    config = function()
-      require("jellybeans").setup({
-        transparent = true,
-        italics = true,
-      })
-    end,
+    opts = {
+      style = "dark",
+      transparent = true,
+      italics = true,
+      plugins = {
+        all = true,
+        auto = true,
+      },
+    },
+    -- config = function()
+    --   require("jellybeans").setup({
+    --     style = "dark",
+    --     transparent = true,
+    --     italics = true,
+    --     plugins = {
+    --       all = true,
+    --       auto = true,
+    --     },
+    --   })
+    -- end,
   },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
@@ -112,7 +156,9 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "monokai-pro",
       colorscheme = "jellybeans",
+      -- colorscheme = "cyberdream",
     },
   },
 }
