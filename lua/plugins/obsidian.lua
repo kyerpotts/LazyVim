@@ -1,3 +1,24 @@
+-- Failed to run `config` for obsidian.nvim
+--
+-- ...ocal/share/nvim/lazy/obsidian.nvim/lua/obsidian/init.lua:104: module 'cmp' not found:
+-- 	no field package.preload['cmp']
+-- cache_loader: module cmp not found
+-- cache_loader_lib: module cmp not found
+-- 	no file './cmp.lua'
+-- 	no file '/usr/share/luajit-2.1/cmp.lua'
+-- 	no file '/usr/local/share/lua/5.1/cmp.lua'
+-- 	no file '/usr/local/share/lua/5.1/cmp/init.lua'
+-- 	no file '/usr/share/lua/5.1/cmp.lua'
+-- 	no file '/usr/share/lua/5.1/cmp/init.lua'
+-- 	no file './cmp.so'
+-- 	no file '/usr/local/lib/lua/5.1/cmp.so'
+-- 	no file '/usr/lib/lua/5.1/cmp.so'
+-- 	no file '/usr/local/lib/lua/5.1/loadall.so'
+--
+-- # stacktrace:
+--   - /obsidian.nvim/lua/obsidian/init.lua:104 _in_ **setup**
+--   - .config/nvim/lua/config/lazy.lua:17
+--   - .config/nvim/init.lua:2
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
@@ -9,12 +30,11 @@ return {
   opts = {
     workspaces = {
       {
-        name = "DPC",
-        path = "~/Vault/DPC",
+        name = "Braincage",
+        path = "~/Documents/Braincage/",
       },
     },
     completion = {
-      nvim_cmp = true,
       min_chars = 2,
     },
     mappings = {

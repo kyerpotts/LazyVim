@@ -1,6 +1,27 @@
 return {
   {
-    "loctvl842/monokai-pro.nvim",
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      compile = false,
+      undercurl = false,
+      commentStyle = { italic = true },
+      functionStyle = { bold = true },
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      transparent = true,
+      dimInactive = false,
+      terminalColors = false,
+      colors = {
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+      },
+    },
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
     config = function()
@@ -53,17 +74,6 @@ return {
         auto = true,
       },
     },
-    -- config = function()
-    --   require("jellybeans").setup({
-    --     style = "dark",
-    --     transparent = true,
-    --     italics = true,
-    --     plugins = {
-    --       all = true,
-    --       auto = true,
-    --     },
-    --   })
-    -- end,
   },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
