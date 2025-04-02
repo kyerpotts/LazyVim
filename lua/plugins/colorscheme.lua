@@ -1,5 +1,24 @@
 return {
   {
+    "eldritch-theme/eldritch.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      palette = "default",
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        keywords = { bold = true },
+        functions = { italic = true },
+        variables = {},
+        sidebars = "dark",
+        floats = "dark",
+      },
+      lualine_bold = true,
+    },
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -32,20 +51,20 @@ return {
   --     })
   --   end,
   -- },
-  {
-    "wtfox/jellybeans.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = "dark",
-      transparent = true,
-      italics = true,
-      plugins = {
-        all = true,
-        auto = true,
-      },
-    },
-  },
+  -- {
+  --   "wtfox/jellybeans.nvim",
+  --   lazy = false,
+  --   priority = 0,
+  --   opts = {
+  --     style = "dark",
+  --     transparent = true,
+  --     italics = true,
+  --     plugins = {
+  --       all = true,
+  --       auto = true,
+  --     },
+  --   },
+  -- },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
   -- lua/plugins/rose-pine.lua
@@ -138,7 +157,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "monokai-pro",
-      colorscheme = "jellybeans",
+      colorscheme = "eldritch",
       -- colorscheme = "cyberdream",
     },
   },
