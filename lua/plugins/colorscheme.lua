@@ -19,6 +19,22 @@ return {
     },
   },
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      style = "moon",
+      styles = {
+        keywords = { bold = true },
+        functions = { italic = true },
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+      dim_inactive = true,
+    },
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -157,7 +173,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "monokai-pro",
-      colorscheme = "eldritch",
+      colorscheme = "tokyonight",
       -- colorscheme = "cyberdream",
     },
   },
