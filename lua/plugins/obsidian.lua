@@ -9,8 +9,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = "DPC",
-        path = "~/Vault/DPC",
+        name = "Braincage",
+        path = "~/Documents/Braincage",
       },
     },
     completion = {
