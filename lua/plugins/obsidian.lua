@@ -6,6 +6,14 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  require("which-key").add({
+    mode = { "n", "v" },
+    {
+      "<leader>o",
+      group = "Obsidian",
+      icon = { icon = "", hl = "false" },
+    },
+  }),
   opts = {
     workspaces = {
       {
