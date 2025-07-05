@@ -4,6 +4,28 @@ local anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 if not anthropic_api_key then
   vim.notify("ANTHROPIC_API_KEY not found in environment", vim.log.levels.ERROR)
 end
+local hostname = vim.fn.hostname()
+local use_ollama = hostname == "deephome"
+local use_claude = hostname == "tidepool"
+
+local adapter_config = {}
+if use_ollama then
+  adapter_config = {
+    adapter = "ollama",
+    model = "qwen3:30B-A3B",
+  }
+elseif use_claude then
+  adapter_config = {
+    adapter = "anthropic",
+    model = "claude-sonnet-4-20250514",
+  }
+else
+  adapter_config = {
+    adapter = "anthropic",
+    model = "claude-sonnet-4-20250514",
+  }
+end
+
 return {
   {
     "olimorris/codecompanion.nvim",
@@ -54,24 +76,9 @@ return {
     opts = {
       log_level = "TRACE",
       strategies = {
-        chat = {
-          -- adapter = "anthropic",
-          -- model = "claude-sonnet-4-20250514",
-          adapter = "ollama",
-          model = "qwen3:30B-A3B",
-        },
-        inline = {
-          -- adapter = "anthropic",
-          -- model = "claude-sonnet-4-20250514",
-          adapter = "ollama",
-          model = "qwen3:30B-A3B",
-        },
-        cmd = {
-          -- adapter = "anthropic",
-          -- model = "claude-sonnet-4-20250514",
-          adapter = "ollama",
-          model = "qwen3:30B-A3B",
-        },
+        chat = adapter_config,
+        inline = adapter_config,
+        cmd = adapter_config,
       },
       prompt_library = {
         ["DnD Companion"] = {
