@@ -6,4 +6,5 @@ return {
     "nvim-lua/plenary.nvim",
   },
   cmd = "VectorCode",
+  event = "VeryLazy",
 }

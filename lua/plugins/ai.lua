@@ -34,6 +34,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
       "ravitemer/codecompanion-history.nvim",
+      "Davidyz/VectorCode",
       {
         "MeanderingProgrammer/render-markdown.nvim",
         ft = { "markdown", "codecompanion" },
@@ -170,16 +171,17 @@ Remember: Your goal is to help create memorable, engaging experiences that bring
                 max_num = { chunk = -1, document = -1 },
                 default_num = { chunk = 50, document = 10 },
                 include_stderr = false,
-                use_lsp = false,
+                use_lsp = true,
                 no_duplicate = true,
                 chunk_mode = false,
                 ---@type VectorCode.CodeCompanion.SummariseOpts
                 summarise = {
                   ---@type boolean|(fun(chat: CodeCompanion.Chat, results: VectorCode.QueryResult[]):boolean)|nil
-                  enabled = false,
-                  adapter = nil,
+                  enabled = true,
+                  adapter = adapter_config,
                   system_prompt = function(original_prompt)
-                    return original_prompt
+                    return "Summarize the following code context concisely, focusing on key functionality and relationships:\n\n"
+                      .. original_prompt
                   end,
                   query_augmented = true,
                 },
@@ -193,7 +195,7 @@ Remember: Your goal is to help create memorable, engaging experiences that bring
           enabled = true,
           opts = {
             keymap = "gh",
-            save_chat_keymap = "sc",
+            save_chat_keymap = "gp",
             auto_save = true,
             expiration_days = 0,
             picker = "snacks",
